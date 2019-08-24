@@ -109,56 +109,6 @@ Date:   Tue Jan 24 10:32:07 2017 +1000
     Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
     Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
 
-commit b87c312590877800b4e18a17a012b47839f5c06b
-Author: Peter Hutterer <peter.hutterer@who-t.net>
-Date:   Mon Jan 23 13:44:58 2017 +1000
-
-    libXi 1.7.9
-    
-    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
-
-commit 557b60798a9da49386f1034b133838332735de22
-Author: Emilio Pozuelo Monfort <pochu@debian.org>
-Date:   Tue Dec 27 17:24:10 2016 +0100
-
-    Fix possible free of uninitialized pointer
-    
-    If the _XReply() call fails, we'll try to free an uninitialized
-    pointer.
-    
-    https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=849026
-    
-    Reported-by: Thomas Walker <thwalker3@gmail.com>
-    Signed-off-by: Emilio Pozuelo Monfort <pochu@debian.org>
-    Reviewed-by: Julien Cristau <jcristau@debian.org>
-    Tested-by: Thomas Walker <thwalker3@gmail.com>
-    Signed-off-by: Julien Cristau <jcristau@debian.org>
-
-commit 4c5c8d6246debc06a56120cff71bfdf1877884d0
-Author: Emilio Pozuelo Monfort <pochu@debian.org>
-Date:   Tue Oct 25 21:31:19 2016 +0200
-
-    Check that allocating a buffer succeeded
-    
-    Since we are going to write into the buffer, we should make sure the
-    allocation didn't fail.
-    
-    Reported-by: Julien Cristau <jcristau@debian.org>
-    Signed-off-by: Emilio Pozuelo Monfort <pochu@debian.org>
-    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
-
-commit 7ac03c6c1907a39b5b42b17ad331295b8c85154d
-Author: Emilio Pozuelo Monfort <pochu@debian.org>
-Date:   Tue Oct 25 21:31:18 2016 +0200
-
-    Plug a memory leak
-    
-    Introduced in commit 19a9cd6.
-    
-    Reported-by: Julien Cristau <jcristau@debian.org>
-    Signed-off-by: Emilio Pozuelo Monfort <pochu@debian.org>
-    Signed-off-by: Peter Hutterer <peter.hutterer@who-t.net>
-
 commit 1bdeb431c3cc9eec7e12fdd29a83237f2f228865
 Author: Peter Hutterer <peter.hutterer@who-t.net>
 Date:   Tue Oct 25 12:43:44 2016 +1000
@@ -1199,7 +1149,7 @@ Date:   Wed Dec 21 15:40:37 2011 +1000
     Merge branch 'multitouch'
     
     Conflicts:
-            configure.ac
+    	configure.ac
 
 commit 82a631263ef4e6f46c1f33748089db8bf603b095
 Author: Peter Hutterer <peter.hutterer@who-t.net>
@@ -1404,7 +1354,7 @@ Date:   Sat Sep 17 06:41:30 2011 +1000
     Merge branch 'smooth-scrolling'
     
     Conflicts:
-            src/XExtInt.c
+    	src/XExtInt.c
 
 commit 3ed1b463205295a5ebba7d570a4cb8dfade51a38
 Author: Peter Hutterer <peter.hutterer@who-t.net>
@@ -3220,7 +3170,7 @@ Date:   Thu Jun 4 15:49:07 2009 +1000
     Merge branch 'master' into xi2
     
     Conflicts:
-            man/XI.xml
+    	man/XI.xml
 
 commit 8ea9ebcedcb99480a5774c7755329a2ca8fda07b
 Author: Benjamin Close <Benjamin.Close@clearchain.com>
@@ -4058,16 +4008,16 @@ Date:   Fri Feb 29 18:14:00 2008 -0300
     
     src/XExtInt.c:xinput_extension_hooks field event_to_wire of type
       XExtensionHooks that has the prototype     Status (*event_to_wire)(
-                  Display*                  /* display */,
-                  XEvent*                   /* re */,
-                  xEvent*                   /* event */
+    	      Display*			/* display */,
+                  XEvent*			/* re */,
+                  xEvent*			/* event */
       );
       does not match Status
       _XiEventToWire(
-        register Display     *dpy,          /* pointer to display structure */
-        register XEvent      *re,           /* pointer to client event */
-        register xEvent     **event,        /* wire protocol event */
-        register int         *count);
+        register Display	 *dpy,		/* pointer to display structure */
+        register XEvent	 *re,		/* pointer to client event */
+        register xEvent	**event,	/* wire protocol event */
+        register int	 *count);
     
     Signed-off-by: Peter Hutterer <peter@cs.unisa.edu.au>
 
@@ -4086,9 +4036,9 @@ Date:   Mon Apr 28 14:35:11 2008 +0930
     
     Conflicts:
     
-            .gitignore
-            man/XGrabDeviceKey.man
-            man/XListInputDevices.man
+    	.gitignore
+    	man/XGrabDeviceKey.man
+    	man/XListInputDevices.man
 
 commit 7d0977bc02ce4f29c0ed335fcdcce4ed7c328259
 Author: Peter Hutterer <peter@cs.unisa.edu.au>
